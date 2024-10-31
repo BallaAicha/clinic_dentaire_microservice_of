@@ -1,0 +1,21 @@
+server:
+  port: 8060
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/users
+    username: ousmane
+    password: ousmane
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+application:
+  config:
+    equipment-url: http://localhost:8222/api/v1/equipments/salles

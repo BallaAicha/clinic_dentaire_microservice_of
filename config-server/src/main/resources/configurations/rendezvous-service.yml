@@ -1,0 +1,25 @@
+server:
+  port: 8070
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rendezvous
+    username: ousmane
+    password: ousmane
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+application:
+  config:
+    dentist-url: http://localhost:8222/api/v1/users/dentistes
+    patient-url: http://localhost:8222/api/v1/patients/patient
+    equipment-url: http://localhost:8222/api/v1/equipments/produits
+    facture-url: http://localhost:8222/api/v1/factures/bills
+    soins-url: http://localhost:8222/api/v1/soins/soin

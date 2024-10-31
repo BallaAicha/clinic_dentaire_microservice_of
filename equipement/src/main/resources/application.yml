@@ -1,0 +1,10 @@
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: equipment
+logging:
+  level:
+    root: INFO
+    org.springframework: DEBUG
+    org.hibernate: DEBUG

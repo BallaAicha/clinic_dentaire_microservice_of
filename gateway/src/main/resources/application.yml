@@ -1,0 +1,14 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9099/realms/clinic-microservices
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: gateway-service
+
+application:
+  config:
+    token-url: http://localhost:8070/set-token

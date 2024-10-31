@@ -1,0 +1,35 @@
+server:
+  port: 8222
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: equipment
+          uri: lb:http://EQUIPMENT
+          predicates:
+            - Path=/api/v1/equipments/**
+        - id: facture
+          uri: lb:http://FACTURE
+          predicates:
+            - Path=/api/v1/factures/**
+        - id: patient-service
+          uri: lb:http://PATIENT-SERVICE
+          predicates:
+            - Path=/api/v1/patients/**
+        - id: rendezvous-service
+          uri: lb:http://RENDEZVOUS-SERVICE
+          predicates:
+            - Path=/api/v1/rendezvous/**
+          filters:
+            - name: TokenFilter
+        - id: soins-service
+          uri: lb:http://SOINS-SERVICE
+          predicates:
+            - Path=/api/v1/soins/**
+        - id: users-service
+          uri: lb:http://USERS-SERVICE
+          predicates:
+            - Path=/api/v1/users/**
